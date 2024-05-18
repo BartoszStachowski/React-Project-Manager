@@ -2,7 +2,7 @@ import { ProjectSidebar } from "./components/ProjectSidebar";
 
 function App() {
   return (
-    <main>
+    <main className="my-8 h-screen">
       <ProjectSidebar />
     </main>
   );
