@@ -1,4 +1,4 @@
-export const SelectedProject = ({ project }) => {
+export const SelectedProject = ({ project, onDelete }) => {
   const formattedDate = new Date(project.dueDate).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -12,12 +12,15 @@ export const SelectedProject = ({ project }) => {
           <h1 className="mb-2 text-3xl font-bold text-stone-600">
             {project.title}
           </h1>
-          <button className="text-stone-600 hover:text-stone-950">
+          <button
+            className="text-stone-600 hover:text-stone-950"
+            onClick={onDelete}
+          >
             Delete
           </button>
         </div>
         <p className="mb-4 text-stone-400">{formattedDate}</p>
-        <p className="whitespace-pre-wrap text-sky-600">
+        <p className="whitespace-pre-wrap text-stone-600">
           {project.description}
         </p>
       </header>
