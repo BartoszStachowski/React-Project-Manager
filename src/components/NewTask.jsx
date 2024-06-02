@@ -8,6 +8,9 @@ export const NewTask = ({ onAdd }) => {
   };
 
   const handleClick = () => {
+    if (enteredTask.trim() === "") {
+      return;
+    }
     onAdd(enteredTask);
     setEnteredTask("");
   };
